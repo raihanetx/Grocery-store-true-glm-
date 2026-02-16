@@ -58,7 +58,7 @@ export function ProductCard({ product }: ProductCardProps) {
             </Link>
 
             <div className="flex items-center gap-2 mb-1.5">
-                <span className="text-sm font-semibold text-primary">
+                <span className="text-sm font-semibold text-green-600">
                   TK {product.price}
                 </span>
                 {product.oldPrice && (
@@ -71,7 +71,7 @@ export function ProductCard({ product }: ProductCardProps) {
             <Button 
                 onClick={handleAddToCart}
                 size="sm"
-                className="w-full text-xs font-bold py-1.5 h-auto flex items-center justify-center gap-1 bg-primary text-white rounded-full border-none cursor-pointer transition-transform active:scale-95"
+                className="w-full text-xs font-bold py-1.5 h-auto flex items-center justify-center gap-1 bg-green-600 text-white rounded-full border-none cursor-pointer transition-transform active:scale-95 hover:bg-green-700"
             >
                 <i className="ri-shopping-cart-line h-3.5 w-3.5" />
                 Add to Cart

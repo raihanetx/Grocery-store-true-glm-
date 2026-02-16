@@ -19,7 +19,7 @@ export default function MobileNav() {
              <Link key={item.href} href={item.href} className={cn(
                 "flex flex-col items-center justify-center flex-1 h-full relative cursor-pointer transition-colors", 
                 index < navItems.length -1 && "after:content-[''] after:absolute after:right-0 after:top-1/2 after:-translate-y-1/2 after:h-[25px] after:w-[1px] after:bg-gray-300",
-                (pathname === item.href || (item.href === '/#products' && pathname === '/')) ? 'text-primary' : 'text-gray-500 hover:text-primary'
+                (pathname === item.href || (item.href === '/#products' && pathname === '/')) ? 'text-green-600' : 'text-gray-500 hover:text-green-600'
              )}>
                 {item.icon}
                 <span className="text-[10px] font-medium leading-none mt-1">{item.label}</span>
