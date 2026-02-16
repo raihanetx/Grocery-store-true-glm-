@@ -252,15 +252,15 @@ export default function HomePage() {
             <div className="flex justify-center">
               <div className="flex gap-4 overflow-x-auto md:flex-wrap md:justify-center pb-2 md:pb-0 px-4 no-scrollbar">
                 <div onClick={() => setCurrentCategory('all')} className="flex-shrink-0 flex flex-col items-center cursor-pointer">
-                  <div className={cn("w-[60px] h-[60px] rounded-xl border flex items-center justify-center mb-2 transition-colors", currentCategory === 'all' ? "border-primary text-primary" : "border-gray-300 text-gray-700 hover:text-primary")}>
+                  <div className={cn("w-[60px] h-[60px] rounded-xl border flex items-center justify-center mb-2 transition-colors", currentCategory === 'all' ? "border-green-600 text-green-600" : "border-gray-300 text-gray-700 hover:text-green-600")}>
                     <i className="ri-apps-line text-2xl" />
                   </div>
-                  <span className={cn("text-[11px] font-medium", currentCategory === 'all' && "text-primary")}>All</span>
+                  <span className={cn("text-[11px] font-medium", currentCategory === 'all' && "text-green-600")}>All</span>
                 </div>
                 
                 {categories.map(cat => (
                   <div key={cat.id} onClick={() => setCurrentCategory(cat.id)} className="flex-shrink-0 flex flex-col items-center cursor-pointer">
-                    <div className={cn("w-[60px] h-[60px] rounded-xl border bg-white flex items-center justify-center overflow-hidden mb-2 transition-colors relative", currentCategory === cat.id ? "border-primary text-primary" : "border-gray-300 text-gray-700 hover:text-primary")}>
+                    <div className={cn("w-[60px] h-[60px] rounded-xl border bg-white flex items-center justify-center overflow-hidden mb-2 transition-colors relative", currentCategory === cat.id ? "border-green-600 text-green-600" : "border-gray-300 text-gray-700 hover:text-green-600")}>
                       {cat.imageUrl ? (
                         <Image src={cat.imageUrl} alt={cat.name} fill className="object-cover" sizes="60px" loading="lazy" />
                       ) : cat.code.startsWith('ri-') ? (
@@ -269,7 +269,7 @@ export default function HomePage() {
                         <i className="ri-folder-line text-2xl" />
                       )}
                     </div>
-                    <span className={cn("text-[11px] font-medium text-center w-[70px]", currentCategory === cat.id && "text-primary")}>{cat.name}</span>
+                    <span className={cn("text-[11px] font-medium text-center w-[70px]", currentCategory === cat.id && "text-green-600")}>{cat.name}</span>
                   </div>
                 ))}
               </div>

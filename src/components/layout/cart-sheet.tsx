@@ -104,11 +104,11 @@ export function CartSheet({ open, onOpenChange }: CartSheetProps) {
                 
                 <div className="flex justify-between text-lg font-bold">
                     <span>Total</span>
-                    <span className="text-primary">৳{finalTotal.toFixed(0)}</span>
+                    <span className="text-green-600">৳{finalTotal.toFixed(0)}</span>
                 </div>
                 
                  <SheetClose asChild>
-                    <Button asChild size="lg" className="w-full font-bold text-lg bg-primary hover:bg-primary/90">
+                    <Button asChild size="lg" className="w-full font-bold text-lg bg-green-600 hover:bg-green-700">
                        <Link href="/checkout">Proceed to Checkout</Link>
                     </Button>
                 </SheetClose>
@@ -142,7 +142,7 @@ function CartItemRow({ item, onQuantityChange, onRemove }: CartItemRowProps) {
       <div className="flex-1">
         <p className="font-semibold">{item.name}</p>
         <p className="text-sm text-muted-foreground">{item.subtitle}</p>
-        <p className="text-sm font-medium text-primary">৳{item.price.toFixed(0)}</p>
+        <p className="text-sm font-medium text-green-600">৳{item.price.toFixed(0)}</p>
         <div className="mt-2 flex items-center">
             <div className="flex items-center border rounded-md">
                 <Button variant="ghost" size="icon" className="h-8 w-8" onClick={() => onQuantityChange(item, -1)}><i className="ri-subtract-line h-4 w-4" /></Button>

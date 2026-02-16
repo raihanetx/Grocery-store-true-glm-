@@ -39,7 +39,7 @@ export default function AppHeader() {
         </div>
 
         <form onSubmit={handleSubmit} className="hidden md:flex flex-1 justify-center mx-[2rem] max-w-2xl">
-            <div className="flex items-center border border-gray-300 rounded-full px-6 w-full bg-transparent h-12 relative transition-all duration-200 focus-within:border-primary">
+            <div className="flex items-center border border-gray-300 rounded-full px-6 w-full bg-transparent h-12 relative transition-all duration-200 focus-within:border-green-600">
                 <Input name="search" defaultValue={defaultSearch} placeholder="Search Product" className="w-full h-auto outline-none bg-transparent text-lg text-gray-700 placeholder-gray-400 pr-10 border-0 focus-visible:ring-0 focus-visible:ring-offset-0" />
                 <div className="absolute right-[60px] h-7 w-[1px] bg-gray-300"></div>
                 <Button type="submit" variant="ghost" className="absolute right-5 cursor-pointer hover:text-black transition-colors h-auto w-auto p-0 hover:bg-transparent">

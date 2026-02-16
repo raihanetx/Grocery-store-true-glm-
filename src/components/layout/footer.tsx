@@ -63,7 +63,7 @@ export default function AppFooter() {
               </div>
             ) : (
               <h2 className="text-2xl font-black tracking-tighter text-gray-900">
-                {firstWord}<span className="text-primary">.</span>
+                {firstWord}<span className="text-green-600">.</span>
               </h2>
             )}
           </Link>
@@ -73,31 +73,31 @@ export default function AppFooter() {
           </p>
           
           <div className="flex flex-wrap justify-center items-center gap-x-4 gap-y-2 text-sm">
-            <Link href="/about" className="text-gray-600 hover:text-primary transition-colors">About Us</Link>
+            <Link href="/about" className="text-gray-600 hover:text-green-600 transition-colors">About Us</Link>
             <span className="text-gray-300">•</span>
-            <Link href="/privacy" className="text-gray-600 hover:text-primary transition-colors">Privacy Policy</Link>
+            <Link href="/privacy" className="text-gray-600 hover:text-green-600 transition-colors">Privacy Policy</Link>
             <span className="text-gray-300">•</span>
-            <Link href="/terms" className="text-gray-600 hover:text-primary transition-colors">Terms</Link>
+            <Link href="/terms" className="text-gray-600 hover:text-green-600 transition-colors">Terms</Link>
           </div>
           
           <div className="flex gap-3">
             {settings?.facebook && (
-              <a href={settings.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="w-10 h-10 rounded-full border-2 border-gray-300 flex items-center justify-center text-gray-600 hover:border-primary hover:text-primary transition-all">
+              <a href={settings.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="w-10 h-10 rounded-full border-2 border-gray-300 flex items-center justify-center text-gray-600 hover:border-green-600 hover:text-green-600 transition-all">
                 <i className="ri-facebook-fill text-xl"></i>
               </a>
             )}
             {settings?.messenger && (
-              <a href={getMessengerLink()} target="_blank" rel="noopener noreferrer" aria-label="Messenger" className="w-10 h-10 rounded-full border-2 border-gray-300 flex items-center justify-center text-gray-600 hover:border-primary hover:text-primary transition-all">
+              <a href={getMessengerLink()} target="_blank" rel="noopener noreferrer" aria-label="Messenger" className="w-10 h-10 rounded-full border-2 border-gray-300 flex items-center justify-center text-gray-600 hover:border-green-600 hover:text-green-600 transition-all">
                 <i className="ri-messenger-fill text-xl"></i>
               </a>
             )}
             {settings?.whatsapp && (
-              <a href={getWhatsAppLink()} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="w-10 h-10 rounded-full border-2 border-gray-300 flex items-center justify-center text-gray-600 hover:border-primary hover:text-primary transition-all">
+              <a href={getWhatsAppLink()} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="w-10 h-10 rounded-full border-2 border-gray-300 flex items-center justify-center text-gray-600 hover:border-green-600 hover:text-green-600 transition-all">
                 <i className="ri-whatsapp-fill text-xl"></i>
               </a>
             )}
             {settings?.phone && (
-              <a href={getPhoneLink()} aria-label="Phone" className="w-10 h-10 rounded-full border-2 border-gray-300 flex items-center justify-center text-gray-600 hover:border-primary hover:text-primary transition-all">
+              <a href={getPhoneLink()} aria-label="Phone" className="w-10 h-10 rounded-full border-2 border-gray-300 flex items-center justify-center text-gray-600 hover:border-green-600 hover:text-green-600 transition-all">
                 <i className="ri-phone-fill text-xl"></i>
               </a>
             )}
@@ -138,19 +138,19 @@ export default function AppFooter() {
               <div className="flex flex-col gap-4">
                 <h4 className="text-sm font-bold text-gray-900 uppercase tracking-wider mb-4">Explore</h4>
                 <ul className="list-none flex flex-col gap-3 p-0">
-                  <li><Link href="/#products" className="text-sm text-gray-600 hover:text-primary transition-colors">All Products</Link></li>
-                  <li><Link href="/about" className="text-sm text-gray-600 hover:text-primary transition-colors">About Us</Link></li>
-                  <li><Link href="/privacy" className="text-sm text-gray-600 hover:text-primary transition-colors">Privacy Policy</Link></li>
-                  <li><Link href="/terms" className="text-sm text-gray-600 hover:text-primary transition-colors">Terms & Conditions</Link></li>
+                  <li><Link href="/#products" className="text-sm text-gray-600 hover:text-green-600 transition-colors">All Products</Link></li>
+                  <li><Link href="/about" className="text-sm text-gray-600 hover:text-green-600 transition-colors">About Us</Link></li>
+                  <li><Link href="/privacy" className="text-sm text-gray-600 hover:text-green-600 transition-colors">Privacy Policy</Link></li>
+                  <li><Link href="/terms" className="text-sm text-gray-600 hover:text-green-600 transition-colors">Terms & Conditions</Link></li>
                 </ul>
               </div>
               
               <div className="flex flex-col gap-4">
                 <h4 className="text-sm font-bold text-gray-900 uppercase tracking-wider mb-4">Policies</h4>
                 <ul className="list-none flex flex-col gap-3 p-0">
-                  <li><Link href="/privacy" className="text-sm text-gray-600 hover:text-primary transition-colors">Privacy Policy</Link></li>
-                  <li><Link href="/terms" className="text-sm text-gray-600 hover:text-primary transition-colors">Terms of Service</Link></li>
-                  <li><Link href="/refund" className="text-sm text-gray-600 hover:text-primary transition-colors">Refund Policy</Link></li>
+                  <li><Link href="/privacy" className="text-sm text-gray-600 hover:text-green-600 transition-colors">Privacy Policy</Link></li>
+                  <li><Link href="/terms" className="text-sm text-gray-600 hover:text-green-600 transition-colors">Terms of Service</Link></li>
+                  <li><Link href="/refund" className="text-sm text-gray-600 hover:text-green-600 transition-colors">Refund Policy</Link></li>
                 </ul>
               </div>
               
@@ -158,32 +158,32 @@ export default function AppFooter() {
                 <h4 className="text-sm font-bold text-gray-900 uppercase tracking-wider mb-4">Contact Us</h4>
                 <ul className="list-none flex flex-col gap-3 p-0">
                   {settings?.phone && (
-                    <li><a href={getPhoneLink()} className="text-sm text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><i className="ri-phone-line"/>{settings.phone}</a></li>
+                    <li><a href={getPhoneLink()} className="text-sm text-gray-600 hover:text-green-600 transition-colors flex items-center gap-2"><i className="ri-phone-line"/>{settings.phone}</a></li>
                   )}
                   {settings?.whatsapp && (
-                    <li><a href={getWhatsAppLink()} target="_blank" rel="noopener noreferrer" className="text-sm text-gray-600 hover:text-primary transition-colors flex items-center gap-2"><i className="ri-whatsapp-line"/>WhatsApp</a></li>
+                    <li><a href={getWhatsAppLink()} target="_blank" rel="noopener noreferrer" className="text-sm text-gray-600 hover:text-green-600 transition-colors flex items-center gap-2"><i className="ri-whatsapp-line"/>WhatsApp</a></li>
                   )}
                 </ul>
                 <div>
                   <p className="text-sm font-semibold text-gray-900 mt-4 mb-3">Follow Us</p>
                   <div className="flex flex-wrap gap-3">
                     {settings?.facebook && (
-                      <a href={settings.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="w-10 h-10 rounded-lg border-2 border-gray-300 flex items-center justify-center text-gray-600 hover:border-primary hover:text-primary transition-all">
+                      <a href={settings.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="w-10 h-10 rounded-lg border-2 border-gray-300 flex items-center justify-center text-gray-600 hover:border-green-600 hover:text-green-600 transition-all">
                         <i className="ri-facebook-fill text-xl"></i>
                       </a>
                     )}
                     {settings?.messenger && (
-                      <a href={getMessengerLink()} target="_blank" rel="noopener noreferrer" aria-label="Messenger" className="w-10 h-10 rounded-lg border-2 border-gray-300 flex items-center justify-center text-gray-600 hover:border-primary hover:text-primary transition-all">
+                      <a href={getMessengerLink()} target="_blank" rel="noopener noreferrer" aria-label="Messenger" className="w-10 h-10 rounded-lg border-2 border-gray-300 flex items-center justify-center text-gray-600 hover:border-green-600 hover:text-green-600 transition-all">
                         <i className="ri-messenger-fill text-xl"></i>
                       </a>
                     )}
                     {settings?.whatsapp && (
-                      <a href={getWhatsAppLink()} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="w-10 h-10 rounded-lg border-2 border-gray-300 flex items-center justify-center text-gray-600 hover:border-primary hover:text-primary transition-all">
+                      <a href={getWhatsAppLink()} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="w-10 h-10 rounded-lg border-2 border-gray-300 flex items-center justify-center text-gray-600 hover:border-green-600 hover:text-green-600 transition-all">
                         <i className="ri-whatsapp-fill text-xl"></i>
                       </a>
                     )}
                     {settings?.phone && (
-                      <a href={getPhoneLink()} aria-label="Phone" className="w-10 h-10 rounded-lg border-2 border-gray-300 flex items-center justify-center text-gray-600 hover:border-primary hover:text-primary transition-all">
+                      <a href={getPhoneLink()} aria-label="Phone" className="w-10 h-10 rounded-lg border-2 border-gray-300 flex items-center justify-center text-gray-600 hover:border-green-600 hover:text-green-600 transition-all">
                         <i className="ri-phone-fill text-xl"></i>
                       </a>
                     )}
@@ -198,9 +198,9 @@ export default function AppFooter() {
               © {currentYear} <span className="font-semibold text-gray-900">{displayName}</span> All rights reserved.
             </p>
             <div className="flex items-center gap-6 text-sm">
-              <Link href="/privacy" className="text-gray-600 hover:text-primary transition-colors">Privacy</Link>
-              <Link href="/terms" className="text-gray-600 hover:text-primary transition-colors">Terms</Link>
-              <Link href="/about" className="text-gray-600 hover:text-primary transition-colors">About</Link>
+              <Link href="/privacy" className="text-gray-600 hover:text-green-600 transition-colors">Privacy</Link>
+              <Link href="/terms" className="text-gray-600 hover:text-green-600 transition-colors">Terms</Link>
+              <Link href="/about" className="text-gray-600 hover:text-green-600 transition-colors">About</Link>
             </div>
           </div>
         </div>

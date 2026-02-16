@@ -153,7 +153,7 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
         <div className="min-h-screen bg-white flex flex-col items-center justify-center">
           <i className="ri-emotion-sad-line text-6xl text-gray-300 mb-4" />
           <p className="text-gray-500">Product not found</p>
-          <Button onClick={() => router.push('/')} className="mt-4 bg-primary text-white">
+          <Button onClick={() => router.push('/')} className="mt-4 bg-green-600 text-white">
             Go Home
           </Button>
         </div>
@@ -252,7 +252,7 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
       <section className="bg-white text-gray-800 antialiased pb-10">
         <div className="border-b border-gray-100 bg-white sticky top-[60px] md:top-[90px] z-30">
           <div className="max-w-5xl mx-auto px-5 py-3 flex justify-start items-center">
-            <button onClick={() => router.back()} className="flex items-center gap-2 text-gray-800 font-semibold text-sm cursor-pointer hover:text-primary transition-colors">
+            <button onClick={() => router.back()} className="flex items-center gap-2 text-gray-800 font-semibold text-sm cursor-pointer hover:text-green-600 transition-colors">
               <i className="ri-arrow-left-line h-4 w-4" />
             </button>
           </div>
@@ -276,7 +276,7 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
               {product.images.length > 1 && (
                 <div className="grid grid-cols-4 gap-4">
                   {product.images.slice(0, 4).map((img, index) => (
-                    <div key={img.id} className={cn('relative aspect-square rounded-xl overflow-hidden cursor-pointer border-2 transition-all hover:border-primary', index === 0 ? 'border-primary' : 'border-gray-100')}>
+                    <div key={img.id} className={cn('relative aspect-square rounded-xl overflow-hidden cursor-pointer border-2 transition-all hover:border-green-600', index === 0 ? 'border-green-600' : 'border-gray-100')}>
                       <Image src={img.url} fill className="object-cover" alt={`${product.name} ${index + 1}`} loading="lazy" sizes="100px" />
                     </div>
                   ))}
@@ -353,10 +353,10 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
               {activeTab === 'revTab' && (
                 <div className="max-w-3xl mx-auto">
                   <div onClick={() => setReviewModalOpen(true)} className="flex items-center gap-3 mb-8 cursor-pointer group">
-                    <div className="w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center text-gray-500 group-hover:border-primary group-hover:text-primary transition bg-white">
+                    <div className="w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center text-gray-500 group-hover:border-green-600 group-hover:text-green-600 transition bg-white">
                       <i className="ri-user-line" />
                     </div>
-                    <div className="flex-1 border border-gray-300 rounded-full h-12 px-4 flex items-center text-gray-400 bg-white group-hover:border-primary group-hover:text-primary transition">Write a review...</div>
+                    <div className="flex-1 border border-gray-300 rounded-full h-12 px-4 flex items-center text-gray-400 bg-white group-hover:border-green-600 group-hover:text-green-600 transition">Write a review...</div>
                   </div>
                   {reviews.length === 0 ? (
                     <div className="text-center py-8">
@@ -392,7 +392,7 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
                 <div className="space-y-6 text-center md:text-left">
                   {product.faqs.map((faq) => (
                     <div key={faq.id} className="pb-4 border-b border-gray-50 last:border-0">
-                      <p className="text-sm font-bold text-gray-800 mb-1 flex items-center justify-center md:justify-start gap-2"><i className="ri-question-line text-primary" /> {faq.question}</p>
+                      <p className="text-sm font-bold text-gray-800 mb-1 flex items-center justify-center md:justify-start gap-2"><i className="ri-question-line text-green-600" /> {faq.question}</p>
                       <p className="text-sm text-gray-600 md:pl-6">{faq.answer}</p>
                     </div>
                   ))}
@@ -415,8 +415,8 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
                         <div className="w-full h-full flex items-center justify-center"><i className="ri-image-line text-4xl text-gray-300" /></div>
                       )}
                     </div>
-                    <h4 className="text-sm font-bold text-gray-800 mb-1 group-hover:text-primary transition-colors">{rp.name}</h4>
-                    <span className="text-xs font-bold text-primary">৳{rp.varieties?.[0]?.price || 0}</span>
+                    <h4 className="text-sm font-bold text-gray-800 mb-1 group-hover:text-green-600 transition-colors">{rp.name}</h4>
+                    <span className="text-xs font-bold text-green-600">৳{rp.varieties?.[0]?.price || 0}</span>
                   </Link>
                 ))}
               </div>

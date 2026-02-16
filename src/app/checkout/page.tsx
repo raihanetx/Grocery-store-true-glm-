@@ -510,7 +510,7 @@ export default function CheckoutPage() {
         {appliedCoupons.length > 0 && (
           <div className="mb-4">
             <div className="text-xs font-bold text-gray-800 mb-3 flex items-center gap-2">
-              <i className="ri-coupon-3-line w-4 h-4 text-primary" /> Applied Coupons
+              <i className="ri-coupon-3-line w-4 h-4 text-green-600" /> Applied Coupons
             </div>
             {appliedCoupons.map((coupon) => (
               <div key={coupon.id} className="flex items-center justify-between bg-green-50 border border-green-200 rounded-lg px-4 py-3 mb-2">
@@ -556,7 +556,7 @@ export default function CheckoutPage() {
           <button 
             onClick={handleApplyCoupon}
             disabled={applyingCoupon}
-            className="bg-primary/10 border-2 border-primary text-primary rounded-lg px-6 font-semibold text-sm transition-all hover:bg-primary hover:text-white self-stretch disabled:opacity-50"
+            className="bg-green-100 border-2 border-green-600 text-green-600 rounded-lg px-6 font-semibold text-sm transition-all hover:bg-green-600 hover:text-white self-stretch disabled:opacity-50"
           >
             {applyingCoupon ? '...' : 'APPLY'}
           </button>

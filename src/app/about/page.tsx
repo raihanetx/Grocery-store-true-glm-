@@ -26,7 +26,7 @@ export default function AboutPage() {
       <div className="bg-white border-b sticky top-0 z-10">
         <div className="max-w-2xl mx-auto px-4 py-4">
           <div className="flex items-center gap-4">
-            <Link href="/" className="text-gray-500 hover:text-primary">
+            <Link href="/" className="text-gray-500 hover:text-green-600">
               <i className="ri-arrow-left-line text-xl" />
             </Link>
             <h1 className="text-lg font-bold">About Us</h1>
@@ -38,7 +38,7 @@ export default function AboutPage() {
       <div className="max-w-2xl mx-auto px-4 py-6">
         {loading ? (
           <div className="flex justify-center py-12">
-            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary" />
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-green-600" />
           </div>
         ) : (
           <div className="bg-white rounded-xl p-6 shadow-sm">
