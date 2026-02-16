@@ -1,0 +1,58 @@
+{
+  "placeholderImages": [
+    {
+      "id": "img_banana",
+      "description": "A bunch of organic bananas",
+      "imageUrl": "https://i.postimg.cc/PrcP53nB/1000018776-removebg-preview.png",
+      "imageHint": "banana"
+    },
+    {
+      "id": "img_milk",
+      "description": "A bottle of fresh cow milk",
+      "imageUrl": "https://i.postimg.cc/CLtzxPp2/1000018784-removebg-preview.png",
+      "imageHint": "milk bottle"
+    },
+    {
+      "id": "img_sourdough",
+      "description": "A loaf of sourdough bread",
+      "imageUrl": "https://i.postimg.cc/vHjcZqwj/IMG-20260203-195111.png",
+      "imageHint": "sourdough bread"
+    },
+    {
+      "id": "img_greentea",
+      "description": "A cup of green tea",
+      "imageUrl": "https://i.postimg.cc/ZKgC57zX/IMG-20260203-195125.png",
+      "imageHint": "green tea"
+    },
+    {
+      "id": "img_salmon",
+      "description": "A fillet of fresh salmon",
+      "imageUrl": "https://i.postimg.cc/4NMmxLRL/IMG-20260203-195157.png",
+      "imageHint": "salmon fillet"
+    },
+    {
+      "id": "img_chips",
+      "description": "A bowl of potato chips",
+      "imageUrl": "https://i.postimg.cc/7YcfZsrt/IMG-20260203-195223.png",
+      "imageHint": "potato chips"
+    },
+    {
+      "id": "img_apple",
+      "description": "A fresh red apple",
+      "imageUrl": "https://i.postimg.cc/hPwftyRM/IMG-20260203-195242.png",
+      "imageHint": "apple"
+    },
+    {
+      "id": "img_eggs",
+      "description": "A carton of brown eggs",
+      "imageUrl": "https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?w=400",
+      "imageHint": "eggs"
+    },
+    {
+      "id": "img_carrots",
+      "description": "A bunch of fresh carrots",
+      "imageUrl": "https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?w=400",
+      "imageHint": "carrots"
+    }
+  ]
+}

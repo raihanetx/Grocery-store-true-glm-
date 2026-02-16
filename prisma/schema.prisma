@@ -1,0 +1,272 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:/home/z/my-project/db/grocery.db"
+}
+
+model Category {
+  id        String     @id @default(cuid())
+  name      String
+  code      String     @unique
+  imageUrl  String?
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+  products  Product[]
+}
+
+model Product {
+  id               String           @id @default(cuid())
+  name             String
+  categoryId       String
+  category         Category         @relation(fields: [categoryId], references: [id])
+  isOffer          Boolean          @default(false)
+  shortDesc        String?
+  longDesc         String?
+  faqEnabled       Boolean          @default(false)
+  createdAt        DateTime         @default(now())
+  updatedAt        DateTime         @updatedAt
+  varieties        ProductVariety[]
+  faqs             ProductFAQ[]
+  images           ProductImage[]
+  reviews          Review[]
+  relatedProducts  RelatedProduct[]  @relation("ProductToRelated")
+  relatedTo        RelatedProduct[]  @relation("RelatedToProduct")
+  views            ProductView[]
+  cartAdds         CartAdd[]
+
+  @@index([categoryId])
+  @@index([isOffer])
+}
+
+model ProductVariety {
+  id           String   @id @default(cuid())
+  productId    String
+  product      Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  name         String
+  price        Float
+  stock        Int
+  hasDiscount  Boolean  @default(false)
+  discountType String?
+  discountValue Float?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@index([productId])
+  @@index([hasDiscount])
+}
+
+model ProductFAQ {
+  id        String   @id @default(cuid())
+  productId String
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  question  String
+  answer    String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([productId])
+}
+
+model ProductImage {
+  id        String   @id @default(cuid())
+  productId String
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  url       String
+  createdAt DateTime @default(now())
+
+  @@index([productId])
+}
+
+model Coupon {
+  id           String    @id @default(cuid())
+  code         String    @unique
+  type         String
+  value        Float
+  applyTo      String
+  categoryId   String?
+  productId    String?
+  expiresAt    DateTime?
+  isActive     Boolean   @default(true)
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  @@index([code])
+  @@index([isActive])
+}
+
+model Visitor {
+  id           String           @id @default(cuid())
+  visitorId    String           @unique
+  serialNumber Int              @unique
+  name         String?
+  phone        String?
+  email        String?
+  createdAt    DateTime         @default(now())
+  updatedAt    DateTime         @updatedAt
+  sessions     CheckoutSession[]
+}
+
+model CheckoutSession {
+  id              String   @id @default(cuid())
+  visitorId       String
+  visitor         Visitor  @relation(fields: [visitorId], references: [id])
+
+  entryTime       DateTime @default(now())
+  exitTime        DateTime?
+  timeSpent       Int?
+
+  customerName    String?
+  customerPhone   String?
+  customerAddress String?
+
+  cartItems       String
+  subtotal        Float    @default(0)
+
+  appliedCoupons  String?
+  discountAmount  Float    @default(0)
+
+  orderCompleted  Boolean  @default(false)
+  orderPlacedAt   DateTime?
+
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@index([visitorId])
+  @@index([orderCompleted])
+}
+
+model Review {
+  id        String   @id @default(cuid())
+  productId String
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  userName  String
+  rating    Int
+  comment   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([productId])
+  @@index([rating])
+}
+
+model RelatedProduct {
+  id           String  @id @default(cuid())
+  productId    String
+  product      Product @relation("ProductToRelated", fields: [productId], references: [id], onDelete: Cascade)
+  relatedId    String
+  relatedTo    Product @relation("RelatedToProduct", fields: [relatedId], references: [id], onDelete: Cascade)
+  sortOrder    Int     @default(0)
+  createdAt    DateTime @default(now())
+
+  @@unique([productId, relatedId])
+  @@index([productId])
+  @@index([relatedId])
+}
+
+model Order {
+  id                String       @id @default(cuid())
+  invoice           String       @unique
+  customerName      String
+  customerPhone     String
+  customerEmail     String?
+  customerAddress   String
+
+  subtotal          Float
+  discount          Float        @default(0)
+  deliveryCharge    Float        @default(60)
+  total             Float
+
+  status            String       @default("pending")
+  paymentStatus     String       @default("cod")
+
+  courierStatus     String?
+  consignmentId     String?
+  trackingCode      String?
+  trackingMessage   String?
+
+  adminNote         String?
+
+  createdAt         DateTime     @default(now())
+  updatedAt         DateTime     @updatedAt
+  approvedAt        DateTime?
+  deliveredAt       DateTime?
+
+  items             OrderItem[]
+
+  @@index([status])
+  @@index([customerPhone])
+  @@index([createdAt])
+}
+
+model OrderItem {
+  id              String   @id @default(cuid())
+  orderId         String
+  order           Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  productId       String?
+  productName     String
+  varietyName     String?
+  price           Float
+  quantity        Int
+  total           Float
+  createdAt       DateTime @default(now())
+
+  @@index([orderId])
+  @@index([productId])
+}
+
+model ProductView {
+  id        String   @id @default(cuid())
+  productId String
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  visitorId String?
+  createdAt DateTime @default(now())
+
+  @@index([productId])
+  @@index([createdAt])
+}
+
+model CartAdd {
+  id        String   @id @default(cuid())
+  productId String
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  visitorId String?
+  quantity  Int      @default(1)
+  createdAt DateTime @default(now())
+
+  @@index([productId])
+  @@index([createdAt])
+}
+
+// Site Settings - Single row for all site configuration
+model SiteSettings {
+  id                String   @id @default("site-settings")
+
+  // Delivery Settings
+  deliveryCharge    Float    @default(60)
+
+  // Social Media & Contact Links (for Help widget and footer)
+  facebook          String?  // Facebook page URL
+  messenger         String?  // Messenger link or page ID
+  whatsapp          String?  // WhatsApp number (e.g., +8801XXXXXXXXX)
+  phone             String?  // Phone number for calls
+
+  // Store Information
+  storeName         String   @default("Lumina Grocery")
+  storeLogo         String?  // Logo image URL
+  storeFavicon      String?  // Favicon image URL
+
+  // Policy Pages Content
+  aboutUs           String?
+  privacyPolicy     String?
+  termsCondition    String?
+  refundPolicy      String?
+
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+}
